@@ -46,7 +46,7 @@ Using Docker to run Terraform can be a very flexible and clean way to manage you
 
 # Test official sample
 
-1. Initialize the project
+1. Initialize the project\
     Which downloads a plugin called a provider that lets Terraform interact with Docker.
 
     ```sh
@@ -83,9 +83,11 @@ Using Docker to run Terraform can be a very flexible and clean way to manage you
     commands will detect it and remind you to do so if necessary.
     ```
 
-2. Procision the NGINX server via main.tf with ```apply```
+2. Provision the NGINX server via main.tf with ```apply```\
     When Terraform asks you to confirm type ```yes``` and predd ```ENTER```.
 
     ```sh
     terraform apply
     ```
+
+    Execute the command when .tf configuration updated.
