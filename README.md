@@ -23,10 +23,16 @@ Using Docker to run Terraform can be a very flexible and clean way to manage you
     This command mounts your my-terraform-project directory to /terraform in the container and sets the working directory to /terraform. The terraform init command is then executed in this context.
 
 3. Alias for Convenience\
-    To avoid typing long Docker commands every time, you can create an alias in your shell. For example, in bash, you can add the following line to your .bashrc or .bash_profile:
+    To avoid typing long Docker commands every time, you can create an alias function in your shell. For example, in bash, you can add the following line to your .bashrc or .bash_profile:
 
     ```sh
-    alias terraform="docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd):/terraform -w /terraform hashicorp/terraform:latest"
+    terraform() {
+        docker run -it --rm \
+            -v /var/run/docker.sock:/var/run/docker.sock \
+            -v "$(pwd)":/terraform \
+            -w /terraform \
+            hashicorp/terraform:latest "$@"
+    }
     ```
 
     After adding this alias and reloading your shell configuration, you can simply use terraform init, terraform plan, terraform apply, etc., as if Terraform were installed locally.
