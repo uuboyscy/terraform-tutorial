@@ -44,6 +44,7 @@ Using Docker to run Terraform can be a very flexible and clean way to manage you
     - File Permissions: Sometimes, files created by Docker (running as root by default) can have permissions that make them difficult to manage from your host machine. Adjust permissions as necessary.
 
 
-# Test official sample
+# Test sample
 
-1. [Basic example with NGINX](sample-01-nginx/README.md)
+1. [Basic example with NGINX](/sample-01-nginx/README.md)
+2. [Manage variables](/sample-02-gcp-with-variables/README.md)
