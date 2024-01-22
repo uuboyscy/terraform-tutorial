@@ -27,11 +27,22 @@ provider "prefect" {
   workspace_id = var.prefect_workspace_id
 }
 
-resource "prefect_work_pool" "default" {
-  name         = "default"
+resource "prefect_work_pool" "sample1" {
+  name         = "sample1"
   type         = "prefect agent"
   paused       = false
   workspace_id = var.prefect_workspace_id
+}
+
+resource "prefect_work_pool" "sample2" {
+  name         = "sample2"
+  type         = "prefect agent"
+  paused       = false
+  workspace_id = var.prefect_workspace_id
+
+  provisioner "local-exec" {
+    command = "./sample.sh ${prefect_work_pool.sample2.id}"
+  }
 }
 
 # Finally, in rare occasions, you also have the option
