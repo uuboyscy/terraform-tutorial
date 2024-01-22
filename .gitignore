@@ -35,3 +35,4 @@ terraform.rc
 
 # Ignore secret files
 gcp-terraform-key.json
+ssh-tunnel-key
