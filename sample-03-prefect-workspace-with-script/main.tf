@@ -81,6 +81,40 @@ resource "prefect_work_pool" "sample3" {
   }
 }
 
+resource "prefect_work_pool" "sample4" {
+  description  = "Create work pool then create work queue via remote script"
+  name         = "sample4"
+  type         = "prefect agent"
+  paused       = false
+  workspace_id = var.prefect_workspace_id
+
+  # scp local file to remote
+  provisioner "file" {
+    source      = "./create-work-queue.sh"
+    destination = "/tmp/create-work-queue.sh"
+    connection {
+      type        = "ssh"
+      user        = var.ssh_tunnel_user
+      private_key = file(var.ssh_tunnel_key_file)
+      host        = var.ssh_tunnel_host
+    }
+  }
+
+  # Execute remote script
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x /tmp/create-work-queue.sh",
+      "/tmp/create-work-queue.sh ${var.prefect_cli_remote}"
+    ]
+    connection {
+      type        = "ssh"
+      user        = var.ssh_tunnel_user
+      private_key = file(var.ssh_tunnel_key_file)
+      host        = var.ssh_tunnel_host
+    }
+  }
+}
+
 # Finally, in rare occasions, you also have the option
 # to point the provider to a locally running Prefect Server,
 # with a limited set of functionality from the provider.
