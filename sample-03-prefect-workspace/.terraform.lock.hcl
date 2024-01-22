@@ -1,0 +1,29 @@
+# This file is maintained automatically by "terraform init".
+# Manual edits may be lost in future updates.
+
+provider "registry.terraform.io/prefecthq/prefect" {
+  version = "0.1.1"
+  hashes = [
+    "h1:AKyAst+bZKuk3vkwr4Cz9EJ0n2To/p9vFSim+yb0jdk=",
+    "zh:18904373baad75ddd14845c209371a3dfbdc7d133a7ce6731bcc6105f88d49b8",
+    "zh:19395055dd203483150d8e8903e5e90dd7df561fc66fb8f9d5409908a1bf3ceb",
+    "zh:1e721802ecf46f42ca1adc3f66311fb06d5cfccf0adf327f2ee9768270e5dfbe",
+    "zh:24a8407c42da11e5af8c53e333ce159ce26a16be538cd77338399039a4f5e44f",
+    "zh:2b325cfb11be4b4930a25743fe50753fb9538dfd864dfab9b95219f3343f0ebf",
+    "zh:2c80e3a5a6a89de084a12dac17ebd522de002ed1962ea4c6e2310656ffe73d49",
+    "zh:419e2a3109e8ede2749e278b44403b2897e836811d55c25d0c06a61339903dd1",
+    "zh:4c11d4fdfa0fc220585e17bc40a8f4b4a2dffe77d4273819b575e92a9fe8a951",
+    "zh:775bd9cb0411c11bcb40646a60354e8346678c00e297bd0e1305c6dec834815f",
+    "zh:7dd0cbc109c6429a682ec9cab19e7776b360f787338f6d43031b24caaa4ed74c",
+    "zh:a89bdfbc0533b0b894034f5d6414c4d23bf89166324c88d785af92ead2b7f8f4",
+    "zh:b92ce9a6e58defecdd8cc7eda0f377db507f95947f13e83cab85f30323f01cb1",
+    "zh:bc80b6152997a6eb48b5d902ec53a31b9cf6956b7fd0a1cbe40baf6c0aa8ee98",
+    "zh:c5e47231e039c1e420fcdd4da9a7e35ba3246da36e8d67f7a93ff7f9909bafe8",
+    "zh:c891698fb1f5b5732c3154f7c9308331fb34d558870b018119a4d0e97b3ca669",
+    "zh:c9c05bd421c133b81d964afe687a8d0d59c46c6bf7433ed8fe0e20dd620770f4",
+    "zh:e34b775babfebe094888b9fd6e0aa0ac7aff6792e7979a0a5903fef7ec404b8e",
+    "zh:e9a29d2909f77bede1a59153a483c28d516926cc7500d8574ba99fb398e1a345",
+    "zh:f16bd5aa3659d90fe1e96262da1a4aa722e04d2d1101db31c9c1b70ded266df2",
+    "zh:f49ed1b2dd6d6e757fbab83a8a9b2a221dfa230412335af285a0c234518cc3e7",
+  ]
+}
