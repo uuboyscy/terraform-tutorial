@@ -56,8 +56,8 @@ resource "prefect_work_pool" "sample3" {
 
   # scp local file to remote
   provisioner "file" {
-    source      = "./sample-remote-script"
-    destination = "/tmp/sample-remote-script"
+    source      = "./sample-remote-script.sh"
+    destination = "/tmp/sample-remote-script.sh"
     connection {
       type        = "ssh"
       user        = var.ssh_tunnel_user
@@ -69,8 +69,8 @@ resource "prefect_work_pool" "sample3" {
   # Execute remote script
   provisioner "remote-exec" {
     inline = [
-      "chmod +x /tmp/sample-remote-script",
-      "/tmp/sample-remote-script ${var.prefect_cli_remote}"
+      "chmod +x /tmp/sample-remote-script.sh",
+      "/tmp/sample-remote-script.sh ${var.prefect_cli_remote}"
     ]
     connection {
       type        = "ssh"
@@ -104,7 +104,7 @@ resource "prefect_work_pool" "sample4" {
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/create-work-queue.sh",
-      "/tmp/create-work-queue.sh ${var.prefect_cli_remote}"
+      "/tmp/create-work-queue.sh ${var.prefect_cli_remote} ${var.prefect_profile} ${self.name} docker"
     ]
     connection {
       type        = "ssh"

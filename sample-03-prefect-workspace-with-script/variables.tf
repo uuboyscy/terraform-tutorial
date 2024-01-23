@@ -10,6 +10,9 @@ variable "prefect_workspace_id" {
 variable "prefect_cli_remote" {
     description = "prefect_cli_remote"
 }
+variable "prefect_profile" {
+    description = "prefect_profile"
+}
 variable "ssh_tunnel_host" {
     description = "ssh_tunnel_host"
 }

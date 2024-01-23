@@ -1,6 +1,10 @@
 #!/bin/bash
 
 PREFECT_CLI=$1
+PREFECT_PROFILE=$2
+WORK_POOL_NAME=$3
+WORK_QUEUE_NAME=$4
 
 $PREFECT_CLI -p dev work-queue ls
 
+$PREFECT_CLI -p $PREFECT_PROFILE work-queue create --pool $WORK_POOL_NAME $WORK_QUEUE_NAME
