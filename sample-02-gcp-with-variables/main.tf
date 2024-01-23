@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     google = {
-      source = "hashicorp/google"
+      source  = "hashicorp/google"
       version = "4.51.0"
     }
   }
@@ -9,10 +9,9 @@ terraform {
 
 provider "google" {
   credentials = file(var.gcp_credential)
-
-  project = var.gcp_project
-  region  = var.gcp_region
-  zone    = var.gcp_zone
+  project     = var.gcp_project
+  region      = var.gcp_region
+  zone        = var.gcp_zone
 }
 
 resource "google_compute_network" "vpc_network" {
